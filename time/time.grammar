@@ -1,1 +1,10 @@
-<datetime> = <date> <time> {nf.datetime($1,$2)};
+#include "time.en.grammar"
+#include "time.zh.grammar"
+#include "time.id.grammar"
+
+<datetime> = <date> <time> {nf.datetime($1,$2)}
+           | <time> <date> {nf.datetime($2,$1)}
+           | <date> {nf.datetime($1,"")}
+           | <time> {nf.datetime("",$1)}
+           ;
+

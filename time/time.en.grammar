@@ -1,0 +1,29 @@
+<month> = "January" {nf.I(1)}
+        | "February" {nf.I(2)}
+        | "March" {nf.I(3)}
+        | "April" {nf.I(4)}
+        | "May" {nf.I(5)}
+        | "June" {nf.I(6)}
+        | "July" {nf.I(7)}
+        | "August" {nf.I(8)}
+        | "September" {nf.I(9)}
+        | "October" {nf.I(10)}
+        | "November" {nf.I(11)}
+        | "December" {nf.I(12)}
+        | "jan" {nf.I(1)}
+        | "feb" {nf.I(2)}
+        | "mar" {nf.I(3)}
+        | "apr" {nf.I(4)}
+        | "may" {nf.I(5)}
+        | "jun" {nf.I(6)}
+        | "jul" {nf.I(7)}
+        | "aug" {nf.I(8)}
+        | "sep" {nf.I(9)}
+        | "oct" {nf.I(10)}
+        | "nov" {nf.I(11)}
+        | "dec" {nf.I(12)}
+        ;
+
+<date> = <digits> <month> <digits> {nf.I($0)}
+       | <digits> <punct> <month> <punct> <digits> {nf.I($0)}
+       ;

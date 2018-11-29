@@ -1,0 +1,8 @@
+<year> = <digits> "年";
+<month> = <digits> "月";
+<day> = <digits> "日";
+
+
+<date> = <year> <month> <day>
+       | <month> <day>
+       ;
