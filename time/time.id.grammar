@@ -1,11 +1,11 @@
-<month> = "Januari" {nf.I(1)}
-        | "Febuari" {nf.I(2)}
-        | "Maret" {nf.I(3)}
-        | "Mei" {nf.I(5)}
-        | "Juni" {nf.I(6)}
-        | "Juli" {nf.I(7)}
-        | "Agustus" {nf.I(8)}
-        | "Oktober" {nf.I(10)}
+<month> = "Januari"  {nf.I(1)}
+        | "Febuari"  {nf.I(2)}
+        | "Maret"    {nf.I(3)}
+        | "Mei"      {nf.I(5)}
+        | "Juni"     {nf.I(6)}
+        | "Juli"     {nf.I(7)}
+        | "Agustus"  {nf.I(8)}
+        | "Oktober"  {nf.I(10)}
         | "Desember" {nf.I(12)}
         | "agu" {nf.I(8)}
         | "okt" {nf.I(10)}
