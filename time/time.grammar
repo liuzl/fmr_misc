@@ -3,7 +3,9 @@
 #include "time.id.grammar"
 
 <datetime> = <date> <time> {nf.datetime($1,$2)}
+           | <date> <punct> <time> {nf.datetime($1,$3)}
            | <time> <date> {nf.datetime($2,$1)}
+           | <time> <punct> <date> {nf.datetime($3,$1)}
            | <date> {nf.datetime($1,"")}
            | <time> {nf.datetime("",$1)}
            ;
