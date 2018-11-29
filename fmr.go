@@ -32,8 +32,6 @@ func main() {
 			log.Fatal(c)
 		}
 		line = strings.TrimSpace(line)
-		fmt.Println(line)
-
 		ps, err := grammar.EarleyParseMaxAll(line, "start", "number")
 		if err != nil {
 			log.Fatal(err)
@@ -50,6 +48,6 @@ func main() {
 				}
 			}
 		}
-
+		fmt.Println()
 	}
 }
