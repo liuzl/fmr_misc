@@ -16,6 +16,15 @@
               | "柒" {nf.I(7)}
               | "捌" {nf.I(8)}
               | "玖" {nf.I(9)}
+              | "1" {nf.I(1)}
+              | "2" {nf.I(2)}
+              | "3" {nf.I(3)}
+              | "4" {nf.I(4)}
+              | "5" {nf.I(5)}
+              | "6" {nf.I(6)}
+              | "7" {nf.I(7)}
+              | "8" {nf.I(8)}
+              | "9" {nf.I(9)}
               | "两" {nf.I(2)}
               | "俩" {nf.I(2)}
               | "仨" {nf.I(3)}
@@ -52,7 +61,7 @@
 <cn_num_10s> = <cn_num_10>                             {nf.I($1)}
              | <cn_num_10> <cn_num_unit>               {nf.math.sum($1,$2)}
              | <cn_num_unit> <cn_num_10>               {nf.math.mul($1,$2)}
-             | <cn_num_unit> <cn_num_10> <cn_num_unit> {nf.math.sum(nf.math.mul($1, $2),$3)}
+             | <cn_num_unit> <cn_num_10> <cn_num_unit> {nf.math.sum(nf.math.mul($1,$2),$3)}
              //| <cn_num_unit>                           {nf.I($1)}
              | <cn_zero>                               {nf.I($1)}
              ;
@@ -68,6 +77,10 @@
                | <cn_num_unit> <cn_num_1000> <cn_num_unit>           {nf.math.sum(nf.math.mul($1,$2),nf.math.mul(100,$3))}
                | <cn_num_unit> <cn_num_1000> <cn_num_100s>           {nf.math.sum(nf.math.mul($1,$2),$3)}
                | <cn_num_unit> <cn_num_1000> <cn_zero> <cn_num_100s> {nf.math.sum(nf.math.mul($1,$2),$4)}
+               | <cn_num_100s> <cn_num_1000>                         {nf.math.mul($1,$2)}
+               | <cn_num_100s> <cn_num_1000> <cn_num_unit>           {nf.math.sum(nf.math.mul($1,$2),nf.math.mul(100,$3))}
+               | <cn_num_100s> <cn_num_1000> <cn_num_100s>           {nf.math.sum(nf.math.mul($1,$2),$3)}
+               | <cn_num_100s> <cn_num_1000> <cn_zero> <cn_num_100s> {nf.math.sum(nf.math.mul($1,$2),$4)}
                | <cn_num_100s>                                       {nf.I($1)}
                ;
 
