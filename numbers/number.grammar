@@ -1,0 +1,4 @@
+#include "number.en.grammar"
+#include "number.zh.grammar"
+
+<number> = <numeric> {nf.math.to_number($1)};
