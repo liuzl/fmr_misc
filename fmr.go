@@ -14,6 +14,7 @@ import (
 
 var (
 	g = flag.String("g", "test.grammar", "grammar file")
+	s = flag.String("s", "number", "start rule")
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 			log.Fatal(c)
 		}
 		line = strings.TrimSpace(line)
-		ps, err := grammar.EarleyParseMaxAll(line, "start", "number")
+		ps, err := grammar.EarleyParseMaxAll(line, *s)
 		if err != nil {
 			log.Fatal(err)
 		}
