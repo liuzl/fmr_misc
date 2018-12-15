@@ -24,6 +24,6 @@
         | "dec" {nf.I(12)}
         ;
 
-<date> = <digits> <month> <digits> {nf.I($0)}
-       | <digits> <punct> <month> <punct> <digits> {nf.I($0)}
+<date> = <digits> <month> <digits> {nf.concat($1,$2,$3)}
+       | <digits> <punct> <month> <punct> <digits> {nf.concat($1,$3,$5)}
        ;
